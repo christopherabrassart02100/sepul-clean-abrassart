@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mission Sépulture Propre</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <img src="logo.png" alt="Logo Sépul’Clean Abrassart" style="max-width:200px; display:block; margin:auto; margin-bottom:20px;">
+  <h1>🧼 Mission Sépulture Propre</h1>
+  <div id="timer">Temps restant : 60s</div>
+  <div id="tools">
+    <button onclick="selectTool('brosse')">🧽 Brosse</button>
+    <button onclick="selectTool('balayette')">🧹 Balayette</button>
+    <button onclick="selectTool('arrosoir')">💧 Arrosoir</button>
+    <button onclick="selectTool('main')">✋ Main</button>
+    <button onclick="selectTool('poubelle')">🗑️ Poubelle</button>
+  </div>
+
+  <div id="game">
+    <div class="task" data-tool="brosse">🪦 Pierre sale</div>
+    <div class="task" data-tool="balayette">🍂 Feuilles mortes</div>
+    <div class="task" data-tool="arrosoir">🌼 Plante sèche</div>
+    <div class="task" data-tool="main">📸 Photo tombée</div>
+    <div class="task" data-tool="poubelle">🥀 Fleurs fanées</div>
+  </div>
+
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
