@@ -32,16 +32,26 @@ function checkWin() {
   }
 }
 
-function endGame(message) {
-  clearInterval(timerInterval);
-  document.getElementById("result").textContent = message;
-  document.getElementById("game").style.pointerEvents = "none";
-}
-
-const timerInterval = setInterval(() => {
+// ✅ Minuteur (timer)
+let timerInterval = setInterval(() => {
   timeLeft--;
   document.getElementById("timer").textContent = `Temps restant : ${timeLeft}s`;
+
   if (timeLeft <= 0) {
-    endGame("Temps écoulé !");
+    clearInterval(timerInterval);
+    endGame("⏱️ Temps écoulé ! Essayez encore.");
   }
 }, 1000);
+
+// ✅ Fin de jeu
+function endGame(message) {
+  document.getElementById("result").textContent = message;
+
+  // Désactiver toutes les tâches
+  document.querySelectorAll('.task').forEach(task => {
+    task.style.pointerEvents = "none";
+  });
+
+  // Arrêter le timer (au cas où)
+  clearInterval(timerInterval);
+}
